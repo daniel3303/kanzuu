@@ -6,7 +6,7 @@ class ConstraintSerializer{
     }
 
     serialize(){
-        return null;
+        return new Array();
     }
 
 

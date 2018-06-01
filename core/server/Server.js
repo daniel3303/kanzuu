@@ -30,7 +30,11 @@ class Server{
 
     // broadcasts the world state to all connected players
     broadcast(){
-        console.log(this.serializer.serialize());
+        var worldData = this.serializer.serialize();
+
+        this.playerManager.forEach(function(player){
+            player.sendWorldUpdate(worldData);
+        });
     }
 
     start(){

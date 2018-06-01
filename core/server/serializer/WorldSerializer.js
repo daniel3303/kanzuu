@@ -18,12 +18,23 @@ class WorldSerializer{
     }
 
     serialize(){
-        var out = {};
+        var update = {};
+        var world = {};
 
-        out.bodies = bodySerializer.serialize();
-        out.constraits = constraitSerializer.serialize();
-        out.composites = constraitSerializer.serialize();
-        out.gravity = world.gravity;
+        var out = {
+            create: new Array(),
+            update: update,
+            remove: new Array(),
+            world: world
+        };
+
+        // entities to update
+        update.bodies = this.bodySerializer.serialize();
+        update.constraits = this.constraitSerializer.serialize();
+        update.composites = this.constraitSerializer.serialize();
+
+        // world settings
+        world.gravity = this.world.gravity;
         
         return out;
     }

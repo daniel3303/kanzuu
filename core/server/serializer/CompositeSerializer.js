@@ -6,7 +6,7 @@ class CompositeSerializer{
     }
 
     serialize(){
-        return null;
+        return new Array();
     }
 
 }

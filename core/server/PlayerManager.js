@@ -26,11 +26,23 @@ class PlayerManager{
         var player = new PlayerController(playerEntity, socket);
         this.players[socket.id] = player;
 
+        this.sendWorldInitData(player);
         this.broadcastNewPlayer(player);
+    }
+
+    // executes a callback for each players
+    forEach(closure){
+        for(var id in this.players) {
+            closure(this.players[id]);
+        }
     }
 
     broadcastNewPlayer(player){
         console.log("Implement broadcastNewPlayer.");
+    }
+
+    sendWorldInitData(){
+        
     }
 
 

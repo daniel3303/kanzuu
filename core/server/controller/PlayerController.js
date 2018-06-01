@@ -11,6 +11,14 @@ class PlayerController {
     registerEventListeners(){
 
     }
+
+    sendWorldUpdate(data){
+        this.socket.emit("update", data);
+    }
+
+    getSocket(){
+        return this.socket;
+    }
 }
 
 module.exports = PlayerController;
