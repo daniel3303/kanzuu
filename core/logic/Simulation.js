@@ -1,4 +1,5 @@
 var Matter = require("matter-js");
+var Player = require("./entity/Player.js");
 
 // module aliases
 var Engine = Matter.Engine,
@@ -40,6 +41,13 @@ class Simulation{
         Engine.update(this.engine, delta);
 
         this.lastUpdate = now;
+    }
+
+    createPlayer(){
+        var player = new Player(100, 100);
+        player.addToWorld(this.world);
+
+        return player;
     }
 
 }

@@ -1,12 +1,13 @@
 var Matter = require("matter-js");
 
 // module aliases
-var World = Matter.World;
+var World = Matter.World, Bodies = Matter.Bodies;
 
 class Entity{
     constructor(){
         this.world = null;
         this.body = null;
+        this.bodyFactory = Bodies;
     }
 
     addToWorld(world){

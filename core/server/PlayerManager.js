@@ -1,3 +1,5 @@
+var PlayerController = require("./controller/PlayerController.js");
+
 class PlayerManager{
     constructor(simulation){
         this.simulation = simulation;
@@ -18,9 +20,17 @@ class PlayerManager{
     }
 
     // creates a player for a connection (socket)
-    createPlayer(conn){
+    createPlayer(socket){
         conn.emit("login", true);
-        console.log("Player created.");
+        var playerEntity = this.simulation.createPlayer();
+        var player = new PlayerController(playerEntity, socket);
+        this.players[socket.id] = player;
+
+        this.broadcastNewPlayer(player);
+    }
+
+    broadcastNewPlayer(player){
+        console.log("Implement broadcastNewPlayer.");
     }
 
 
