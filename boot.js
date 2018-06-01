@@ -1,14 +1,4 @@
-const HTTP = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
+var Application = require("./Application.js");
 
-const server = HTTP.createServer(function(request, response) {
-	response.statusCode = 200;
-	response.setHeader('Content-Type', 'text/plain');
-	response.end(request);
-  
-});
-
-server.listen(port, hostname, () => {
-  console.log('Server running.');
-});
+const app = new Application();
+app.start();
