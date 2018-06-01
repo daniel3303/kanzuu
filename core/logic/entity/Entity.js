@@ -17,6 +17,8 @@ class Entity{
 
         World.add(world, this.body);
         this.world = world;
+
+        console.log("Entity added to the world");
     }
 
 }

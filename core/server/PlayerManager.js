@@ -21,7 +21,7 @@ class PlayerManager{
 
     // creates a player for a connection (socket)
     createPlayer(socket){
-        conn.emit("login", true);
+        socket.emit("login", true);
         var playerEntity = this.simulation.createPlayer();
         var player = new PlayerController(playerEntity, socket);
         this.players[socket.id] = player;

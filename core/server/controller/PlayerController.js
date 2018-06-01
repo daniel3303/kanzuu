@@ -9,6 +9,8 @@ class PlayerController {
     }
 
     registerEventListeners(){
-        
+
     }
 }
+
+module.exports = PlayerController;

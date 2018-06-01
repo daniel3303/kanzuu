@@ -50,6 +50,10 @@ class Simulation{
         return player;
     }
 
+    getWorld(){
+        return this.world;
+    }
+
 }
 
 module.exports = Simulation;
