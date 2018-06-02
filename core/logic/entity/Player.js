@@ -1,4 +1,8 @@
 var HumanEntity = require("./HumanEntity.js");
+var Matter = require("matter-js");
+
+// module aliases
+var Bodies = Matter.Bodies, Composite = Matter.Composite;
 
 // Class to describe a player
 class Player extends HumanEntity{
@@ -10,8 +14,7 @@ class Player extends HumanEntity{
     }
 
     createBody(x, y){
-        this.body = this.bodyFactory.circle(x, y, 10);
-
+        Composite.add(this.body, Bodies.circle(x, y, 10));
         console.log("Player body created.");
     }
 }

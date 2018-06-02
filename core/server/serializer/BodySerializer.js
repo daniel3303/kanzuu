@@ -1,16 +1,15 @@
 var Matter = require("matter-js");
 
 class BodySerializer{
-    constructor(world){
-        this.world = world;
+    constructor(){
     }
 
-    serialize(){
+    serialize(bodies){
         var out = new Array();
 
         // for each body
-        for(var index = 0; index < this.world.bodies.length; index++){
-            var body = this.world.bodies[index];
+        for(var index = 0; index < bodies.length; index++){
+            var body = bodies[index];
             var bodyDTO = {};
 
             bodyDTO.id              = body.id;
